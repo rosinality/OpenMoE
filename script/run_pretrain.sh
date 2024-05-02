@@ -1,8 +1,8 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt install -y python3.9 python3.9-venv
-python3.9 -m venv openmoe_venv
+sudo apt install -y python3.10-venv
+python3.10 -m venv openmoe_venv
 
 source openmoe_venv/bin/activate
 python3 -m pip install -U pip setuptools wheel ipython
@@ -13,7 +13,8 @@ pip install git+https://github.com/google-research/jestimator
 pip install protobuf==3.20.3
 git clone --branch=main https://github.com/rosinality/t5x
 cd t5x
-python3 setup.py install
+git pull
+pip install -e .
 
 pip install flax
 
@@ -21,17 +22,21 @@ echo y | python3 -m pip uninstall t5[gcp]
 echo y | python3 -m pip uninstall t5
 git clone --branch=main https://github.com/rosinality/text-to-text-transfer-transformer.git
 cd text-to-text-transfer-transformer
-python3 setup.py install
+git pull
+pip install -e .
 
 echo y | python3 -m pip uninstall seqio
 echo y | python3 -m pip uninstall seqio-nightly
 git clone  --branch=main https://github.com/rosinality/seqio.git
 cd seqio
-python3 setup.py install
+git pull
+pip install -e .
+
 cd ../..
 git clone  --branch=main https://github.com/rosinality/flaxformer.git
 cd flaxformer
-python3 setup.py install
+git pull
+pip install -e .
 
 python3 -m pip install gast
 python3 -m pip install astunparse
@@ -53,13 +58,13 @@ python3 -m pip install h5py
 cd ~
 git clone https://github.com/google/aqt.git
 cd aqt
-python3 setup.py install
+pip install -e .
 
 
 cd ~
 export GOOGLE_CLOUD_BUCKET_NAME=${BUCKET_NAME} \
 export TFDS_DATA_DIR=gs://${BUCKET_NAME} \
-export MODEL_DIR=gs://${BUCKET_NAME}/openmoe_8b/training \
+export MODEL_DIR=gs://${YOUR_BUCKET_NAME}/openmoe_8b/training \
 export T5X_DIR="./t5x" \
 
 python3  ${T5X_DIR}/t5x/train.py \
