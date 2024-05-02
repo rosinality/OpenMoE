@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo apt update
-sudo apt install -y python3.10-venv
+# sudo apt update
+# sudo apt install -y python3.10-venv
 python3.10 -m venv openmoe_venv
 
 source openmoe_venv/bin/activate
