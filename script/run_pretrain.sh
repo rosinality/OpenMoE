@@ -9,8 +9,6 @@ python3 -m pip install -U pip setuptools wheel ipython
 python3 -m pip install --upgrade pip
 python3 -m pip install https://storage.googleapis.com/cloud-tpu-tpuvm-artifacts/wheels/libtpu-nightly/libtpu_nightly-0.1.dev20230724-py3-none-any.whl
 
-pip install --upgrade jax[tpu] -f https://storage.googleapis.com/jax-releases/libtpu_releases.html
-
 pip install git+https://github.com/google-research/jestimator
 pip install protobuf==3.20.3
 git clone --branch=main https://github.com/rosinality/t5x
@@ -61,6 +59,11 @@ cd ~
 git clone https://github.com/google/aqt.git
 cd aqt
 pip install -e .
+
+pip install --upgrade flax==0.7.5
+pip install --upgrade optax==0.1.7
+pip install --upgrade jax[tpu]==0.4.16 -f https://storage.googleapis.com/jax-releases/libtpu_releases.html
+pip install scipy==1.11.0
 
 
 cd ~
