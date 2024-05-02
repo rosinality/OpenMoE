@@ -57,12 +57,12 @@ python3 setup.py install
 
 
 cd ~
-export GOOGLE_CLOUD_BUCKET_NAME=${YOUR_BUDGET_NAME} \
-export TFDS_DATA_DIR=gs://${YOUR_BUDGET_NAME} \
-export MODEL_DIR=gs://${YOUR_BUDGET_NAME}/openmoe_8b/training \
+export GOOGLE_CLOUD_BUCKET_NAME=${BUCKET_NAME} \
+export TFDS_DATA_DIR=gs://${BUCKET_NAME} \
+export MODEL_DIR=gs://${BUCKET_NAME}/openmoe_8b/training \
 export T5X_DIR="./t5x" \
 
 python3  ${T5X_DIR}/t5x/train.py \
-	--gin_file="t5x/examples/t5/t5_1_1/examples/openmoe_large.gin" \
+	--gin_file="t5x/examples/t5/t5_1_1/examples/${TRAIN_CONFIG}.gin" \
   --gin.MODEL_DIR=\"${MODEL_DIR}\" \
   --tfds_data_dir=${TFDS_DATA_DIR}
