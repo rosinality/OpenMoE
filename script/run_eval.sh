@@ -11,7 +11,7 @@ python3 -m pip install https://storage.googleapis.com/cloud-tpu-tpuvm-artifacts/
 
 pip install git+https://github.com/google-research/jestimator
 pip install protobuf==3.20.3
-git clone --branch=main https://github.com/XueFuzhao/t5x
+git clone --branch=main https://github.com/rosinality/t5x
 cd t5x
 python3 setup.py install
 
@@ -19,17 +19,17 @@ pip install flax
 
 echo y | python3 -m pip uninstall t5[gcp]
 echo y | python3 -m pip uninstall t5
-git clone --branch=main https://github.com/XueFuzhao/text-to-text-transfer-transformer.git
+git clone --branch=main https://github.com/rosinality/text-to-text-transfer-transformer.git
 cd text-to-text-transfer-transformer
 python3 setup.py install
 
 echo y | python3 -m pip uninstall seqio
 echo y | python3 -m pip uninstall seqio-nightly
-git clone  --branch=main https://github.com/XueFuzhao/seqio.git
+git clone  --branch=main https://github.com/rosinality/seqio.git
 cd seqio
 python3 setup.py install
 cd ../..
-git clone  --branch=main https://github.com/XueFuzhao/flaxformer.git
+git clone  --branch=main https://github.com/rosinality/flaxformer.git
 cd flaxformer
 python3 setup.py install
 
