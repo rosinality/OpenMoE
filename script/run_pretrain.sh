@@ -69,7 +69,7 @@ pip install scipy==1.11.0
 cd ~
 export GOOGLE_CLOUD_BUCKET_NAME=${BUCKET_NAME} \
 export TFDS_DATA_DIR=gs://${BUCKET_NAME} \
-export MODEL_DIR=gs://${YOUR_BUCKET_NAME}/openmoe_8b/training \
+export MODEL_DIR=gs://${BUCKET_NAME}/openmoe_8b_ul2/training \
 export T5X_DIR="./t5x" \
 
 python3  ${T5X_DIR}/t5x/train.py \
